@@ -1,3 +1,6 @@
 .output/
 .vscode/
+credentials.json
+token.json
+runner.py
 linked_list/.output/
