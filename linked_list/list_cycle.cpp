@@ -21,11 +21,24 @@ void Print(ListNode* head){
 }
 
 
+// FLOYD's ALGORITHM
+ListNode* solve(ListNode*A, int B){
+    ListNode *fast = A;
+    ListNode *slow = A;
 
-
-
-
-
+    while (fast->next && fast->next->next) {
+        fast = fast->next->next;
+        slow = slow->next;
+        if (slow == fast) {
+          while (A != slow) {
+            A = A->next;
+            slow = slow->next;
+          }
+          return slow;
+        }
+    }
+    return NULL;
+}
 
 int main(){
     ListNode* A = new ListNode(1);
@@ -46,8 +59,8 @@ int main(){
     A5->next = A6;
     A6->next = A7;
     A7->next = A8;
-    A8->next = A9;
+    A8->next = A5;
     // A9->next = A;
-    int B = 1;
-    // solve(A, B);
+    int B = 2;
+    solve(A, B);
 }

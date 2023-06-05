@@ -21,7 +21,21 @@ void Print(ListNode* head){
 }
 
 
+ListNode* sort(ListNode* A){
+    ListNode* headptr = A;
 
+    ListNode* sorted = NULL;
+    sorted->val = A->val;
+    sorted->next = NULL;
+    ListNode* startptr = sorted;
+    ListNode* endptr = sorted;
+
+    while (A!=NULL) {
+        if (headptr->val > startptr->val) {
+            // TODO
+        }
+    }
+}
 
 
 
@@ -47,7 +61,6 @@ int main(){
     A6->next = A7;
     A7->next = A8;
     A8->next = A9;
-    // A9->next = A;
-    int B = 1;
-    // solve(A, B);
+    
+    sort(A);
 }

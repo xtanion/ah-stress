@@ -20,12 +20,36 @@ void Print(ListNode* head){
     cout <<endl;
 }
 
+ListNode* solve(ListNode* A, int B){
+    ListNode* head = A;
+    ListNode* headptr = head;
+    ListNode* out = new ListNode(0);
+    ListNode* outptr = out;
+    bool skip = false;
+    int count = 0;
+    while(headptr!=NULL){
+        count ++;
+        cout << count <<endl;
+        for(int i=0; i<B; i++){
+            cout << "headptr: "<< headptr->val<<endl;
+            if (skip==false) {
+                ListNode* t = new ListNode(headptr->val);
+                t->next = out;
+                out = t;
+                Print(out);
+            }else{
+                // ListNode* t = new ListNode(headptr->val);
+                outptr->next = headptr;
+                outptr = outptr->next;
+            }
+            headptr = headptr->next;
+        }
+        skip = skip?false:true;
+    }
 
-
-
-
-
-
+    Print(out);
+    return out->next;
+}
 
 int main(){
     ListNode* A = new ListNode(1);
@@ -48,6 +72,6 @@ int main(){
     A7->next = A8;
     A8->next = A9;
     // A9->next = A;
-    int B = 1;
-    // solve(A, B);
+    int B = 3;
+    solve(A, B);
 }

@@ -22,7 +22,27 @@ void Print(ListNode* head){
 
 
 
+ListNode* solve(ListNode*A, int B){
+    int N=0;
+    ListNode* headptr = A;
+    while(headptr!=NULL){
+        N++;
+        headptr = headptr->next;
+    }
+    headptr = A;
+    if(B>=N){
+        return A->next;
+    }
+    for(int i=0; i<N-B-1; i++){
+        headptr = headptr->next;
+    }
+    ListNode* temp = headptr->next;
+    headptr->next = temp->next;
+    delete temp;
 
+    // Print(A);
+    return A;
+}
 
 
 
@@ -48,6 +68,6 @@ int main(){
     A7->next = A8;
     A8->next = A9;
     // A9->next = A;
-    int B = 1;
-    // solve(A, B);
+    int B = 2;
+    solve(A, B);
 }
