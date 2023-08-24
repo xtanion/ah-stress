@@ -55,13 +55,13 @@ int main(){
     ListNode* A = new ListNode(1);
     ListNode* A1 = new ListNode(2);
     ListNode* A2 = new ListNode(3);
-    ListNode* A3= new ListNode(9);
-    ListNode* A4= new ListNode(0);
+    ListNode* A3= new ListNode(4);
+    ListNode* A4= new ListNode(5);
     ListNode* A5= new ListNode(6);
     ListNode* A6= new ListNode(7);
     ListNode* A7= new ListNode(8);
-    ListNode* A8= new ListNode(4);
-    ListNode* A9= new ListNode(3);
+    ListNode* A8= new ListNode(9);
+    ListNode* A9= new ListNode(0);
     A->next = A1;
     A1->next = A2;
     A2->next = A3;
