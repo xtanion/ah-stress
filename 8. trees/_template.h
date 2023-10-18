@@ -69,4 +69,5 @@ Node* define_head(){
     return head;
 }
 
-extern Node *head = define_head();
+// /// @brief 
+// extern Node *head = define_head();
